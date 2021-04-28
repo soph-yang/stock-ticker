@@ -1,22 +1,23 @@
 {
-  "name": "findstockticker",
-  "version": "1.0.0",
-  "description": "Find associated stock tickers and companies",
-  "main": "find_stockticker.js",
-  "scripts": {
-      "start": "node find_stockticker.js"
-  },
-  "repository": {
-      "type": "git",
-      "url": ""
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-      "url": ""
-  },
-  "homepage": "",
-  "dependencies": {
-      "mongodb": "*"
-  }
+    "name": "findstockticker",
+    "version": "1.0.0",
+    "description": "Find associated stock tickers and companies",
+    "main": "find_stockticker.js",
+    "scripts": {
+        "start": "node find_stockticker.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "",
+    "dependencies": {
+        "csv-parse": "^4.15.4",
+        "mongodb": "*"
+    }
 }
