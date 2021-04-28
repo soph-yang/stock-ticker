@@ -1,6 +1,6 @@
 # Stock Ticker App
-This web app finds associated stock tickers and companies.
 ## https://findstockticker.herokuapp.com
+### This web app finds associated stock tickers and companies.
 
 Created a MongoDB database with a collection called companies to store company names and their stock ticker (the symbol associated with a company stock). Used Node.js and MongoDB to create a web app to read a comma delimited file of companies and their stock ticker code - and inserted corresponding entries into the MongoDB companies collection. Used a file companies.csv for sample data.
 
