@@ -30,7 +30,7 @@ function main()
         //inserting array into MongoDB database
         myFile.on('close', function() {
            console.log('Inserting this array: ', company_array);
-           collection.insertMany(array, function(err, res) {
+           collection.insertMany(company_array, function(err, res) {
                if(err) { 
                    console.log("query err: " + err); return; 
                }
