@@ -1,5 +1,5 @@
 {
-  "name": "Stock Ticker",
+  "name": "findstockticker",
   "version": "1.0.0",
   "description": "Find associated stock tickers and companies",
   "main": "find_stockticker.js",
