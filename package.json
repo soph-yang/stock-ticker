@@ -1,0 +1,19 @@
+{
+  "name": "Stock Ticker",
+  "version": "1.0.0",
+  "description": "Find associated stock tickers and companies",
+  "main": "find_stockticker.js",
+  "scripts": {
+      "start": "node find_stockticker.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+      "url": ""
+  },
+  "homepage": ""
+}

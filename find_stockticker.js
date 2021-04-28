@@ -5,28 +5,30 @@ var http = require('http');
 var fs = require('fs');
 var qs = require('querystring');
 
-http.createServer(function (req, res) 
-  {
-	  if (req.url == "/")
-	  {
-		  file = 'stockticker_form.html';
-		  fs.readFile(file, function(err, txt) {
-        	  res.writeHead(200, {'Content-Type': 'text/html'});
-              res.write(txt);
-              res.end();
-		  });
-	  }
-	  else if (req.url == "/process")
-	  {
-		 res.writeHead(200, {'Content-Type':'text/html'});
-		 pdata = "";
-		 req.on('data', data => {
-           pdata += data.toString();
-         });
+var port = process.env.PORT || 3000;
+// var port = 8080; //localhost
 
-		// when complete POST data is received
-		req.on('end', () => {
-			pdata = qs.parse(pdata);
+http.createServer(function (req, res) {
+    if (req.url == "/")
+    {
+        file = 'stockticker_form.html';
+        fs.readFile(file, function(err, txt) {
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.write(txt);
+            res.end();
+        });
+    }
+    else if (req.url == "/process")
+    {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        pdata = "";
+        req.on('data', data => {
+            pdata += data.toString();
+        });
+
+        // when complete POST data is received
+        req.on('end', () => {
+        	pdata = qs.parse(pdata);
             var result = [];
             
             MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
@@ -64,14 +66,12 @@ http.createServer(function (req, res)
                 });
             	console.log("after close");
             });  //end connect
-		});
-	  }
-	  else 
-	  {
-		  res.writeHead(200, {'Content-Type':'text/html'});
-		  res.write ("Unknown page request");
-		  res.end();
-	  }
-  
-
-}).listen(8080);
+        });
+    }
+    else 
+    {
+        res.writeHead(200, {'Content-Type':'text/html'});
+        res.write ("Unknown page request");
+        res.end();
+    }
+}).listen(port);
